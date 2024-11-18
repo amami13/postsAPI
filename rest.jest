@@ -1,0 +1,11 @@
+GET http://localhost:3000/post
+
+GET http://localhost:3000/post/673b12b31d4adf85ab35c840
+
+POST http://localhost:3000/post 
+Content-Type: application/json
+
+{
+    "message": "Test",
+    "sender": "rest test"
+}
