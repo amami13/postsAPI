@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const session = require("express-session");
 const app = express();
+const postsRoutes = require("./controllers/postsController");
 
 mongoose
   .connect(
@@ -14,7 +15,13 @@ mongoose
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }
-  );
+  )
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Could not connect to MongoDB", err);
+  });
 
 app.use(
   session({
@@ -30,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // use files in modules directory they need to be imported in the start of the file
-// app.use("/", forgetPasswordRoutes);
+app.use("/", postsRoutes);
 
 
 // set the port the app will run in
