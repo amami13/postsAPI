@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const {Post} = require("./Post")
 
     const commentSchema = new mongoose.Schema({
         message: {
@@ -14,9 +15,6 @@ const mongoose = require("mongoose");
             ref: "Post",
             required: true,
           },
-      },
-      {
-        timestamps: true,
       });
 
 const Comment = mongoose.model("Comment", commentSchema);
