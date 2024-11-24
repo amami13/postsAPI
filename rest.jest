@@ -1,3 +1,5 @@
+// posts requests
+
 GET http://localhost:3000/post
 
 GET http://localhost:3000/post/673b12b31d4adf85ab35c840
@@ -8,4 +10,16 @@ Content-Type: application/json
 {
     "message": "Test",
     "sender": "rest test"
+}
+
+// comments requests
+DELETE http://localhost:3000/comment/674359beee72b211cc05785e
+
+PUT http://localhost:3000/comment/674359beee72b211cc05785e
+Content-Type: application/json
+
+{
+    "message": "Test",
+    "postId": "67434f56f3b4d522b88ff718",
+    "sender": "TestUser"
 }
