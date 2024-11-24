@@ -22,7 +22,7 @@ router.post('/post', async (req, res) => {
   });
 
 // GET route made to fetch all posts
-router.get('/post', async (req, res) => {
+router.get('/posts', async (req, res) => {
     try {
       // Fetch all posts from the Post model
       const posts = await Post.find();
@@ -35,13 +35,12 @@ router.get('/post', async (req, res) => {
     }
   });
 
-// GET route made to fetch all posts made by a sender by ID
-router.get('/post/:sender_id', async (req, res) => {
-    const { sender_id } = req.params;
-   
+// GET route made to fetch all posts made by a sender by ID in query params
+router.get('/post', async (req, res) => {
+    const { sender } = req.query;  
     try {
       // Fetch all posts from the Post model by sender ID
-      const post = await Post.find({ sender: sender_id });
+      const post = await Post.find({ sender: sender });
 
       // Return the posts as a JSON response
       res.status(200).json(post);

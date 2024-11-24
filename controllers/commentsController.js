@@ -20,6 +20,16 @@ router.post("/comment", async (req, res) => {
     }
 });
 
+// GET route made to fetch all comments
+router.get('/comment', async (req, res) => {  
+    try {
+        const comments = await Comment.find();
+        res.status(200).json(comments);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching comments", error });
+    }
+});
+
 // Get all comments for a post
 router.get("/comment/:postId", async (req, res) => {
     try {

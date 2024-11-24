@@ -1,8 +1,8 @@
 // posts requests
 
-GET http://localhost:3000/post
+GET http://localhost:3000/posts
 
-GET http://localhost:3000/post/673b12b31d4adf85ab35c840
+GET http://localhost:3000/post?sender=673b12b31d4adf85ab35c840
 
 POST http://localhost:3000/post 
 Content-Type: application/json
@@ -13,6 +13,8 @@ Content-Type: application/json
 }
 
 // comments requests
+GET http://localhost:3000/comment
+
 DELETE http://localhost:3000/comment/674359beee72b211cc05785e
 
 PUT http://localhost:3000/comment/674359beee72b211cc05785e
