@@ -7,6 +7,7 @@ const path = require("path");
 const session = require("express-session");
 const app = express();
 const postsRoutes = require("./controllers/postsController");
+const commentsRoutes = require("./controllers/commentsController");
 
 mongoose
   .connect(
@@ -38,6 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // use files in modules directory they need to be imported in the start of the file
 app.use("/", postsRoutes);
+app.use("/", commentsRoutes);
 
 
 // set the port the app will run in
