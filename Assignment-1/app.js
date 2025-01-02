@@ -6,8 +6,9 @@ const mongoose = require("mongoose");
 const path = require("path");
 const session = require("express-session");
 const app = express();
-const postsRoutes = require("./controllers/postsController");
+const postsRoutes = require("./postsController");
 const commentsRoutes = require("./controllers/commentsController");
+
 
 mongoose
   .connect(

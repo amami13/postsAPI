@@ -1,7 +1,7 @@
 // This file contains the code that handles the requests made to /post
 const express = require("express");
 const router = express.Router();
-const Post = require("../models/Post");
+const Post = require("./models/Post");
 
 // Post route to create new posts
 router.post('/post', async (req, res) => { 
